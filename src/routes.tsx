@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import { SignIn } from "./pages/auth/signIn";
 import { SignUp } from "./pages/register/signUp";
 import { AuthLayout } from "./pages/_layouts/authLayout";
@@ -11,6 +11,7 @@ export const router = createBrowserRouter([
     path: "/",
     element: <AuthLayout />, 
     children: [
+      { index: true, element: <Navigate to="/sign-up" replace /> }, // Redireciona para /sign-up
       { path: "sign-in", element: <SignIn /> },
       { path: "sign-up", element: <SignUp /> },
     ],

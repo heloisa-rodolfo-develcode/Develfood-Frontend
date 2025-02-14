@@ -9,7 +9,7 @@ import { NotFound } from "./pages/error/404";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <AuthLayout />, 
+    element: <AuthLayout />,
     children: [
       { index: true, element: <Navigate to="/sign-up" replace /> }, // Redireciona para /sign-up
       { path: "sign-in", element: <SignIn /> },
@@ -17,14 +17,15 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "/",
-    element: <AppLayout />, 
+    path: "/app", // Usando um prefixo diferente para rotas da aplicação
+    element: <AppLayout />,
     children: [
+      { index: true, element: <Home /> }, // Rota padrão para /app
       { path: "home", element: <Home /> },
     ],
   },
   {
-    path: "*", 
+    path: "*",
     element: <NotFound />,
   },
 ]);

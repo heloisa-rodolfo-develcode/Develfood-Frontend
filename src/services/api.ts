@@ -1,5 +1,5 @@
-import axios from 'axios'
+import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://backend-develfood-wow5.vercel.app',
-})
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000',
+});
